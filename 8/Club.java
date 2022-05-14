@@ -5,13 +5,14 @@ public class Club {
 
     public void addMember(Member member){
         if( members[members.length-1] != null ){
-            clubMembers += "The club is full\n";
-        }
-        for(int i=0; i<members.length; i++){
-            if( members[i] == null ){
-                members[i] = member;
-                clubMembers += members[i].toString();
-                break;
+            clubMembers += String.format("Sorry %s, the club is full.\n", member.getName());
+        }else{
+            for(int i=0; i<members.length; i++){
+                if( members[i] == null ){
+                    members[i] = member;
+                    clubMembers += members[i];
+                    break;
+                }
             }
         }
     }
